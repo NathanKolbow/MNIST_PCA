@@ -40,7 +40,7 @@ def get_eig_perc(S, perc):
         if i / total >= perc:
             valid = np.append(valid, i)
     
-    return np.real(np.diag(valid)), np.real(v[np.isin(lam, valid)])
+    return np.real(np.diag(valid)), np.real(v[:, np.isin(lam, valid)])
 
 
 # Project <image> onto the eigenvectors supplied in <U>
